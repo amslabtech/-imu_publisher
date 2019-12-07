@@ -1,8 +1,13 @@
 # imu_publisher - IMUのデータをpublishする（RPI専用）
 
-※このプログラムは，RPI SenseHAT を搭載したRPIでのみ動作します．
+※このプログラムは，RPI SenseHAT を搭載したRPIでのみ動作する．
 
-送信されるデータパケットは，imu_structure.hpp で規定されます．
+---
+
+
+送信されるデータパケットは，以下の通り imu_structure.hpp で規定されます．
+現状，RPIのカーネルが32bitであるため，struct timeval の互換性が保てない．
+このため，RPIのカーネルが64bitになるまで timeval をデータパケットに含めないことにする．
 
 ```
 //
