@@ -6,10 +6,10 @@
 
 ```
 //
+//	imu_structure.hpp
 //
-//
-#ifndef _DATA_STRUCTURE_HPP_
-#define _DATA_STRUCTURE_HPP_
+#ifndef _IMU_STRUCTURE_HPP_
+#define _IMU_STRUCTURE_HPP_
 
 #include <iostream>
 #include <iomanip>
@@ -50,5 +50,5 @@ namespace imu {
 
 };
 
-#endif	// _DATA_STRUCTURE_HPP_
+#endif	// _IMU_STRUCTURE_HPP_
 ```
