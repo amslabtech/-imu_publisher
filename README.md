@@ -1,1 +1,2 @@
-# -imu_publisher
+# imu_publisher - IMUのデータをpublishする（RPI専用）
+
