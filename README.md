@@ -3,7 +3,7 @@
 ※このプログラムは，RPI SenseHAT を搭載したRPIでのみ動作する．
 
 
-## 送受信されるデータパケットの内容
+## 送信されるデータパケットの内容
 
 送信されるデータパケットは，以下の通り imu_structure.hpp で規定されます．
 現状，RPIのカーネルが32bitであるため，struct timeval の互換性が保てない．
@@ -64,3 +64,15 @@ namespace imu {
 
 #endif	// _IMU_STRUCTURE_HPP_
 ```
+
+
+## 現状はpublishのみ
+
+本来はsubscriberの口を設けていろいろな設定ができるようにしたい．
+現状は，ハードコーディング．
+
+
+
+
+
+
