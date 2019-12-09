@@ -8,8 +8,8 @@
 IMUからデータが得られる速度（頻度）でPublishする．
 速度はセンサおよびバスラインの速度によって異なり，
 
- | SenseHAT |  80 packet/s 程度（I2Cの動作速度を上げればもう少し向上できそう）|
- |  Navio+ | 200 sampling/s 以上出せる |
+ | SenseHAT |  80 packet/s 程度（I2Cの動作速度を上げればもう少し向上できそう）|    
+ |  Navio+ | 200 sampling/s 以上出せる |    
 
 * この速度は RPI の計算能力に依るものではなく，SenseHATとの通信が I2C であることによる．
 
