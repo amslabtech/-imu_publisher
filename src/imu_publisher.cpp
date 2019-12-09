@@ -1,6 +1,8 @@
 //
 //	ImuPublisher
 //
+//	... Y.Kuroda
+//
 #include <iostream>
 #include <time.h>
 #include <sys/time.h>
@@ -13,12 +15,9 @@ int main()
 {
 	Mosquitto imu_publisher;
 
-	const char* ip_addr  = "192.168.0.47";
-	// const char* ip_addr  = "192.168.1.25";
-	// const char* ip_addr  = "localhost";
+	const char* ip_addr  = "localhost";
 	const char* username = "imu";
-//	const char* password = "mqtt";
-//	struct timeval ts;
+	struct timeval ts;
 
 
 	RTIMUSettings* settings = new RTIMUSettings("RTIMULib");
@@ -43,8 +42,9 @@ int main()
 
 	ImuStructure data;
 
-	for(int i=0; ; ) {
-		//gettimeofday(&ts, NULL);
+	int i=0;
+	while(1) {
+		gettimeofday(&ts, NULL);
 
 		usleep(imu->IMUGetPollInterval() * 1000);
 
@@ -53,6 +53,8 @@ int main()
 
 			data = {
 				i,
+				ts.tv_sec,
+				ts.tv_usec,
 				imudata.fusionPose.x(),
 				imudata.fusionPose.y(),
 				imudata.fusionPose.z(),
@@ -68,10 +70,10 @@ int main()
 			};
 
 #if 0
-std::cout	<< imudata.fusionPose.x() << ", "
-			<< imudata.fusionPose.y() << ", "
-			<< imudata.fusionPose.y() << ", "
-			<< std::endl;
+			std::cout	<< imudata.fusionPose.x() << ", "
+						<< imudata.fusionPose.y() << ", "
+						<< imudata.fusionPose.y() << ", "
+						<< std::endl;
 #endif
 
 //			std::cout << RTMath::displayDegrees("", imudata.gyro) << std::endl;

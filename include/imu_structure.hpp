@@ -52,6 +52,7 @@ struct ImuStructure {
 };
 
 namespace imu {
+	const char* ccv2_imu_addr = "192.168.0.172";
 	const char* topic    = "imu";
 	const char* password = "mqtt";
 };
