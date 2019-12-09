@@ -1,6 +1,6 @@
 # imu_publisher - IMUのデータをpublishする（RPI専用）
 
-※このプログラムは，RPI SenseHAT を搭載したRPIでのみ動作する．
+※このプログラムは，--RPI SenseHAT-- を搭載したRPIでのみ動作する．
 
 
 ## データパケットの送信速度（頻度）
