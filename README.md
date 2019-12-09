@@ -9,6 +9,7 @@ IMUからデータが得られる速度（頻度）でPublishする．
 速度はセンサおよびバスラインの速度によって異なり，
 
 |  Board | BUS  |  Samplings/s  |    
+|---  |---   |---    |
 |  SenseHAT  | I2C |   80 packet/s 程度  |    
 |   Navio+   | SPI |  200 sampling/s 以上出せる  |    
 
