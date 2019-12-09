@@ -13,8 +13,8 @@ int main()
 {
 	Mosquitto imu_publisher;
 
-	// const char* ip_addr  = "192.168.0.62";
-	const char* ip_addr  = "192.168.1.25";
+	const char* ip_addr  = "192.168.0.47";
+	// const char* ip_addr  = "192.168.1.25";
 	// const char* ip_addr  = "localhost";
 	// const char* topic    = "topic1";
 	const char* username = "imu";
