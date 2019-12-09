@@ -16,12 +16,6 @@ target_link_libraries(imu_publisher mosquitto RTIMULib)
 INSTALL(
 	TARGETS imu_publisher
 	EXPORT ${PROJECT_NAME}-export
-	RUNTIME DESTINATION bin/${PROJECT_NAME}
-)
-
-INSTALL(
-	EXPORT ${PROJECT_NAME}-export
-	FILE ${PROJECT_NAME}-config.cmake
-	DESTINATION share/cmake/${PROJECT_NAME}
+	RUNTIME DESTINATION /usr/local/bin/
 )
 

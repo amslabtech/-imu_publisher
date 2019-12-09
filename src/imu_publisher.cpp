@@ -16,7 +16,6 @@ int main()
 	const char* ip_addr  = "192.168.0.47";
 	// const char* ip_addr  = "192.168.1.25";
 	// const char* ip_addr  = "localhost";
-	// const char* topic    = "topic1";
 	const char* username = "imu";
 //	const char* password = "mqtt";
 //	struct timeval ts;
@@ -33,7 +32,7 @@ int main()
 	imu->setSlerpPower(0.02);
 	imu->setGyroEnable(true);
 	imu->setAccelEnable(true);
-	imu->setCompassEnable(false);
+	imu->setCompassEnable(true);
 
 
 	imu_publisher.set_username_password(username,password);
@@ -44,7 +43,7 @@ int main()
 
 	ImuStructure data;
 
-	for(int i=0; ; i++) {
+	for(int i=0; ; ) {
 		//gettimeofday(&ts, NULL);
 
 		usleep(imu->IMUGetPollInterval() * 1000);
@@ -78,7 +77,8 @@ std::cout	<< imudata.fusionPose.x() << ", "
 //			std::cout << RTMath::displayDegrees("", imudata.gyro) << std::endl;
 
 			imu_publisher.publish(topic,(void*)&data,sizeof(data));
-			data.print3();
+			//data.print3();
+			i++;
 		}
 	}
 	sleep(1);
