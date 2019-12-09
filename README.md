@@ -1,13 +1,16 @@
 # imu_publisher - IMUのデータをpublishする（RPI専用）
 
-※このプログラムは，--RPI SenseHAT-- を搭載したRPIでのみ動作する．
+※このプログラムは，RPI SenseHAT / Navio+ / Navio2 等 を搭載したRPIでのみ動作する．
 
 
 ## データパケットの送信速度（頻度）
 
-SenseHATからデータが得られる速度（頻度）でPublishする．
-速度はおよそ 80 packet/s 程度
-この速度は RPI の計算能力に依るものではなく，SenseHATとの通信が I2C であることによる．
+IMUからデータが得られる速度（頻度）でPublishする．
+速度はセンサおよびバスラインの速度によって異なり，
+- SenseHAT |  80 packet/s 程度（I2Cの動作速度を上げればもう少し向上できそう）
+- Navio+ | 200 sampling/s 以上出せる
+
+* この速度は RPI の計算能力に依るものではなく，SenseHATとの通信が I2C であることによる．
 
 
 
