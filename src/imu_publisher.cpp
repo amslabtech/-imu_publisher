@@ -44,13 +44,13 @@ int main()
 
 	int i=0;
 	while(1) {
-		gettimeofday(&ts, NULL);
 
 		usleep(imu->IMUGetPollInterval() * 1000);
 
 		while(imu->IMURead()) {
 			RTIMU_DATA imudata = imu->getIMUData();
 
+			gettimeofday(&ts, NULL);
 			data = {
 				i,
 				ts.tv_sec,

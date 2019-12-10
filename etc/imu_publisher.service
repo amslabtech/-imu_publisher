@@ -1,0 +1,17 @@
+[Unit]
+Description=imu_publisher
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/pi
+#ExecStart=/usr/local/bin/imu_publisher /home/pi/RTIMULib.ini
+ExecStart=/usr/local/bin/imu_publisher
+TimeoutStopSec=10
+StandardOutput=null
+User=pi
+Restart = on-failure
+
+[Install]
+WantedBy = multi-user.target
+
