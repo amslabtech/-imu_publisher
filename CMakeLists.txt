@@ -15,7 +15,11 @@ target_link_libraries(imu_publisher mosquitto RTIMULib)
 
 INSTALL(
 	TARGETS imu_publisher
-	EXPORT ${PROJECT_NAME}-export
 	RUNTIME DESTINATION /usr/local/bin/
+)
+
+INSTALL(
+	FILES include/imu_structure.hpp
+	DESTINATION /usr/local/include/
 )
 
