@@ -67,6 +67,10 @@ int main()
 				imudata.compass.x(),
 				imudata.compass.y(),
 				imudata.compass.z(),
+                imudata.fusionQPose.x(),
+                imudata.fusionQPose.y(),
+                imudata.fusionQPose.z(),
+                imudata.fusionQPose.scalar(),
 			};
 
 #if 0

@@ -17,6 +17,7 @@ struct ImuStructure {
 	float  gyro   [3];	// gyros
 	float  accel  [3];	// accelarations
 	float  compass[3];	// magnetometers
+    float  quaternion[4];
 
 	void print9() {
 		std::cout
@@ -32,6 +33,10 @@ struct ImuStructure {
 		<< std::setw(12) << accel  [0]
 		<< std::setw(12) << accel  [1]
 		<< std::setw(12) << accel  [2]
+		<< std::setw(12) << quaternion[0]
+		<< std::setw(12) << quaternion[1]
+		<< std::setw(12) << quaternion[2]
+		<< std::setw(12) << quaternion[3]
 		<< std::endl;
 	}
 
